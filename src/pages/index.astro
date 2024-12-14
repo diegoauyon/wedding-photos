@@ -1,0 +1,28 @@
+---
+import BaseHead from '@/components/BaseHead.astro'
+import Header from '@/components/Header.astro'
+import Gallery from '@/components/Gallery.astro'
+import ExternalScripts from '@/components/ExternalScripts.astro'
+
+let title = 'Fotos de Gaby y Diego'
+let description =
+  'Nuestra sesión de fotos para el bodorio'
+---
+
+<!doctype html>
+<html lang="en">
+  <BaseHead
+    title={title}
+    description={description}
+    author={'AREA44'}
+    og={'og-image.jpg'}
+  />
+
+  <body class="is-preload">
+    <div id="wrapper">
+      <Header title={title} />
+      <Gallery />
+    </div>
+    <ExternalScripts />
+  </body>
+</html>
