@@ -1,16 +1,13 @@
 import { defineConfig } from 'astro/config'
 import { FontaineTransform } from 'fontaine'
-
-const VERCEL_PREVIEW_SITE =
-  process.env.VERCEL_ENV !== 'production' &&
-  process.env.VERCEL_URL &&
-  `https://${process.env.VERCEL_URL}`
-
-const site = VERCEL_PREVIEW_SITE || 'fotos.diegoygaby.com'
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.CI ? site : 'http://localhost:4321',
+  site: 'https://fotos.diegoygaby.com',
+  output: 'static',
+  outDir: 'dist',
+  adapter: vercel(), 
   vite: {
     plugins: [
       FontaineTransform.vite({
